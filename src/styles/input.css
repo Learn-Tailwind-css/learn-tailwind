@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  pre {
+    @apply text-4xl text-teal-500 p-5;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  /* ... */
+}
+
+/* @layer를 안 써주고 그냥 바깥에 .jinsu-item을 선언하면, 이 유틸리티를 사용하지 않아도 컴파일이 되기 때문에 트리-쉐이킹 관점에서 좋지 않다. */
+@layer components {
+  .jinsu-item {
+    @apply text-lg text-teal-500 font-semibold;
+  }
+}
+
+@layer utilities {
+  .shape-outside {
+    shape-outside: circle(50%);
+  }
+}
